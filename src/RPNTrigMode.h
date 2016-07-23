@@ -1,0 +1,1 @@
+enum TrigMode { rad , deg, grad };

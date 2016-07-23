@@ -1,0 +1,136 @@
+RPNCalc
+version 1.1.0
+March 21, 1999
+Jeffrey C. Reinecke
+ureinj00@umail.ucsb.edu
+
+History:
+This is my first project in Be.  I can remember, back when I was in high school, being frustrated, when I found out that DR8.2 didn't have a calculator.  Since then, Be has (understandibly) left the calculator making to us.  Well, various people have put out calculators, but all of them were lacking when it came to scientific functionality.  So, I decided that, after learning C++ (I barely knew C at the time of DR8.2), I would learn the BeAPIs, and RPNCalc would be my first program.
+
+Why RPN?  I happily have been using an HP 48GX since sophomore year of high school (wow, that was about five years ago), and so I am really comfortable in RPN.  I modeled everything after the HP 48G, so if you have one, you'll be right at home.
+
+Contact & Lisence:
+If you like this program, send me something... anything.  Money is preferred, but I don't expect that to happen.  An e-mail would be good "payment" for my efforts.  Tell me what you want to see, what you like, what you don't like.  Things like that.
+
+I have distributed this program as open source.  If you change anything, all I ask is that you send me a copy, so that I can see what you did (and possibly integrate it, with credit, of course), and that if you distribute it, this file, in an unaltered state, is in the same folder as it.
+
+As for liability, this program is freeware.  If this program damages anything, in any way shape or form, the author(s) are in no way responsible.  Use at your own risk!  Even if your computer blows up, and you loose a limb in the process, I can' be blamed!  Got it?  I am also not liable for any loss of data or property.  If I did something horribly wrong, and I overwrite your hard drive, I'm sorry, but I didn't know it was going to happen.  Are you reading this?  If you use my program, your soul is mine... just joking, I am curious if people ever read this part.  Oh, and lastly, I am not to blame for any math errors my claculator makes.
+
+(Of course, I don't expect any of the above will occur.  The worst you may get is a lockup.  Big Whoop, reboot the computer!).
+
+Getting Started:
+Put it anywhere, and double click!  I have no prefs implimented at the moment.  If I ever do, they will be in the apps attributes, rendering a pref file unnecissary.
+
+If you are familiar with an HP48 calculator, or even RPN, this section won't be of much use to you.  If not, carry on!  I could start by explaining RPN to you, but I'll teach by example
+
+Let's start with something simple, say addition.  If you want to evaluate '1+5', do so by typing '1', hit enter, '5', enter, '+' enter.  You will see the 1  be put on the 1st level of the stack, then, 1 will be moved to the second level as 5 is placed on the top level.  When you do '+', it takes the top two things on the stack, (the one and two positon), and adds them, placing the answer on the top (1st level) of the stack.
+
+Here are some more examples.  I write the normal expression in single quotes, and then the RPN version, where a comma denotes a press of the enter button:
+'1-5' --> 1, 5,-
+'6/2' --> 6, 2, /
+'5*2-3' --> 5, 2, *, 3 -
+'4-5*sin(PI/2)' --> 4,5,PI,2,/,sin,*,-
+
+From here, I'll let you figure it out yourself.  For further reference, you might be able to find something on postfix notation, since RPN is basically an implimentation of postfix notation.  I hear a bunch of CS majors go, "oh", as the light bulb goes on... no offense intended.  :) I only said this because my roommates did this.
+
+Commands:
+Here is a list of all the commands available.  Some are stack manipulators, some are constants, some are single parameter operators, and some are two parameter operators.  Commands are not case sensitive (I internally make everything upper case)
+
+e
+Returns exp(1)=2.718282
+
+pi
+Returns 3.141593
+
+drop
+Drops the item on the top of the stack.
+
+DUP
+This duplicates the top element of the stack, and places it on top.  You can also press enter to do the same thing.
+
+CLEAR
+Clears the stack.
+
+SWAP
+Sawp the top two items of the stack.
+
+OVER
+Copies the item on the second level of the stack to the first.
+
+DEPTH
+Returns the depth of the stack.
+
+PICK
+Copies the item on the nth level of the stack to the top of the stack.  n is the value on the top of the stack.
+
+ROLL
+Takes the value on the top level of the stack as the depth to roll the values.  Just try it.
+
++, -, *, /
+Add, subtract, multiply, and divide the top two values, respecticely.
+
+INV
+One over the top item.
+
+NEG
+-1 * top item.
+
+IP
+Return the integer part of the top number.
+
+FP
+Return the fractional parf of the top number.
+
+SQ
+Square the top value.
+
+SQRT
+Find the square root of the top value.
+
+^
+The second level to the power of the first level.
+
+EXP
+e to the power of the top item of the stack.
+
+LN
+Natural log of the top item.
+
+ALOG
+Inverse log base ten (or 10^x).
+
+LOG
+The log base ten of the top item.
+
+SIN, COS, TAN
+The sin, cos, and tangent of the number on the top of the stack.  Snesitive to the trig mode, set in the Trig-Mode menu.
+
+ASIN, ACOS, ATAN
+The inverse of the above functions.  Also sensitive to the Trig-Mode menu.
+
+R>D
+Converts radians to degrees.
+
+D>R
+Converts degrees to radians.
+
+STO
+Puts the number in level 2 of the stack, in the memory address on the top of the stack.  This address can range from 0 to 99
+
+GET
+Recalls the number stored in the memory address on the top of the stack.  On program start, all addresses contain zero.
+
+EXIT
+This quits the app.  Does exactly the same things as choosing quit from the menu, or clicking the close box.
+
+Kown Bugs:
+None at this time...
+
+Future Plans:
+Support for multiple argument, space delimited input is my biggest plan.  I want to be able to type:
+5 1 + and then hit enter, and it will automatically parse it and do it for me.  Then I don't have to hit enter between each arg.  On second thought, I guess it isn't anymore efficient, to the user... but it would be cool nonetheless.
+
+Window position prefs?
+Memory saved?
+
+Anything people want to see?

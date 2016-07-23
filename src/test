@@ -1,0 +1,27 @@
+			if( i<0 )
+			{
+				printf( "null\n" );
+				sprintf( string,"\n" );
+				strcat( buf, string );	
+			}
+			else if( ( TheStack[i]>BIG || ( TheStack[i]<SMALL && TheStack[i]>-SMALL ) || TheStack[i]<-BIG ) && stoploop==false )
+			{
+				printf( "sci\n" );
+				sprintf( string, "%d:   %E\n", n, TheStack[ i ] );
+				strcat( buf, string );
+				stoploop=true;
+			}
+			else if( isint( TheStack[ i ] ) && stoploop==false )
+			{
+				printf( "int\n" );
+				sprintf( string, "%d:   %d\n", n, int(TheStack[ i ]) );
+				strcat( buf, string );
+				stoploop=true;
+			}
+			else if ( stoploop==false )
+			{
+				printf( "float\n" );
+				strcat( buf, string );
+				sprintf( string, "%d:   %f\n", n, TheStack[ i ] );
+				stoploop=true;
+			}

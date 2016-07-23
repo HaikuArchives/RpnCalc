@@ -1,0 +1,1 @@
+int docmd( const char * buf, Stack & Stk, CalcMem & CMem, TrigMode & trigmode );
